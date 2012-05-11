@@ -166,7 +166,7 @@ Ensure the binary is properly linked and will run without segfault
 Create a FreeBSD Sagan Service Script
 
 ```shell
-[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/gist/2595417/71a2cad676a242c7dbaaf9b65b379097d0c6c266/sagan -o /usr/local/etc/rc.d/sagan
+[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/rc.d/sagan -o /usr/local/etc/rc.d/sagan
 
 [user@sensor ~/sagan-0.2.1]# sudo chmod a+x /usr/local/etc/rc.d/sagan 
 ```
@@ -184,7 +184,7 @@ Download rules via Pulledpork (rule set manager)
 Note: pulledpork does not at this time support the classification.config, reference.config, or any *.rulebase files  
 
 ```shell
-[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/gist/2596939/7d2c9d1c53f8ab69622609c71244b45a45de178e/pulledpork.sagan.conf -o /usr/local/etc/pulledpork/pulledpork.sagan.conf
+[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/pulledpork.sagan.conf -o /usr/local/etc/pulledpork/pulledpork.sagan.conf
 
 [user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/beave/sagan-rules/master/classification.config -o /usr/local/etc/sagan-rules/classification.config
 
@@ -221,7 +221,7 @@ include $RULE_PATH/sagan.rules
 Download and install 'fetchcarl' 
 
 ```shell
-[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/gist/2638215/23ee40556620c1a2529f71649fee820d541511cc/fetchcarl.sh -o /usr/local/bin/fetchcarl
+[user@sensor ~/sagan-0.2.1]# fetch https://raw.github.com/shadowbq/sagan-extras/master/bin/fetchcarl.sh -o /usr/local/bin/fetchcarl
 
 [user@sensor ~/sagan-0.2.1]# chmod +x /usr/local/bin/fetchcarl
 
@@ -274,7 +274,8 @@ Run Sagan for the first time.
 Create barnyard2.conf files 
 
 ```shell
-[user@sensor ~]# cat /usr/local/etc/barnyard2.conf.cli
+[user@sensor ~]# sudo fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/barnyard2.cli.conf -o /usr/local/etc/barnyard2.cli.conf
+[user@sensor ~]# cat /usr/local/etc/barnyard2.cli.conf
 
 # this is not hard, only unified2 is supported ;)
 input unified2
@@ -317,10 +318,10 @@ barnyard2_enable="YES"
 barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 ```
 
-## Barnyard2 and Existing Snorby
+## Barnyard2 and Existing Snorby/Base/DB
 
 ```shell
-[user@sensor ~]# sudo cp /usr/local/etc/barnyard2.sagan.conf /usr/local/etc/barnyard2.conf
+[user@sensor ~]# sudo fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/barnyard2.sagan.conf -o /usr/local/etc/barnyard2.conf
 [user@sensor ~]# sudo cat /usr/local/etc/barnyard2.conf 
 
 config reference_file:	    /usr/local/etc/sagan-rules/reference.config
@@ -331,4 +332,10 @@ config interface:	    misc
 config waldo_file:          /var/log/sagan/barnyard2.waldo
 input unified2
 output database: log, mysql, user=snorby password=s3cr3tsauce dbname=snorby host=snorby
+```
+
+Start Barnyard2
+
+```shell
+[user@sensor ~]# sudo /usr/local/etc/rc.d/barnyard2 start
 ```
