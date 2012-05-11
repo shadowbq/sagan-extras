@@ -1,8 +1,9 @@
-h1. Building & Installing SAGAN For FreeBSD
+Building & Installing SAGAN For FreeBSD
+===============================
 
 Configure Sagan to log to unified2 snort logging format. This is best way to decouple the processor and allow for the fastest logging. Use barnyard2 for output plugins.
 
-h2 .Install from Ports Tree:
+## Install from Ports Tree:
 
 Build These: 
 
@@ -23,7 +24,7 @@ Barnyard2 Output Plugin:
 
 Example: mysql-client-5.5.23 Multithreaded SQL database (client) (can be added for barnyard2 sql logging)
 
-h2. Switch FreeBSD syslog to syslog-ng using FIFO
+## Switch FreeBSD syslog to syslog-ng using FIFO
 
 Modify your '/etc/rc.conf' 
 
@@ -71,7 +72,7 @@ Stop old Syslog & Start syslog-ng
 Installing the rest From Source: 
 (At this time Sagan and liblognorm are not in the FreeBSD ports tree.)
 
-h2. Liblognorm
+## Liblognorm
 
 View GIT REPO Status for liblognorm
 http://git.adiscon.com/?p=liblognorm.git;a=summary
@@ -106,7 +107,7 @@ Libraries have been installed in:
    /usr/local/lib
 ```
 
-h2. Sagan
+## Sagan
 
 Download and Decompress Sagan
 
@@ -177,7 +178,7 @@ sagan_enable="YES"
 sagan_user="root"
 ```
 
-h2. Pulledpork
+## Pulledpork
 
 Download rules via Pulledpork (rule set manager) 
 Note: pulledpork does not at this time support the classification.config, reference.config, or any *.rulebase files  
@@ -215,7 +216,7 @@ Modify the Sagan Config '/usr/local/etc/sagan.conf' to # all rules file names an
 ```shell
 include $RULE_PATH/sagan.rules
 ```
-h2. FetchCarl
+## FetchCarl
 
 Download and install 'fetchcarl' 
 
@@ -253,7 +254,7 @@ Sagan rulebase and config update complete.
  (Note: Sagan *.rules were not updated. Use pulledpork for this process.)
 ```
 
-h2. Running Sagan
+## Running Sagan
 
 Run Sagan for the first time.
 
@@ -268,7 +269,7 @@ Run Sagan for the first time.
 -rw-r--r--  1 root   sagan   4785 May 10 18:20 sagan.u2.1336685484
 ```
 
-h2. Barnyard2
+## Barnyard2
 
 Create barnyard2.conf files 
 
@@ -316,7 +317,7 @@ barnyard2_enable="YES"
 barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 ```
 
-h2. Barnyard2 and Existing Snorby
+## Barnyard2 and Existing Snorby
 
 ```shell
 [user@sensor ~]# sudo cp /usr/local/etc/barnyard2.sagan.conf /usr/local/etc/barnyard2.conf
