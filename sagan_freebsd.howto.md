@@ -6,7 +6,7 @@ Configure Sagan to log to unified2 snort logging format. This is best way to dec
 ## Install from Ports Tree:
 
 Build These: 
-
+```shell
 pcre-8.30_2         Perl Compatible Regular Expressions library
 perl-5.12.4_4       Practical Extraction and Report Language
 libdnet-1.11_3      A simple interface to low level networking routines
@@ -14,15 +14,29 @@ libee-0.3.2         An event expression library inspired by CEE
 libestr-0.1.2       A library for some string essentials
 autoconf-2.68       Automatically configure source code on many Un*x platforms 
 automake-1.11.1     GNU Standards-compliant Makefile generator (1.11)
-barnyard2-1.9_2     An output system for Snort or Suricata that parses unified2
 pulledpork-0.6.1_2  Script to update snort-2.8+ rules
 syslog-ng-3.3.5     A powerful syslogd replacement
+```
 
-Example: [user@sensor /usr/ports/devel/libee]# sudo make clean install 
+Example: 
 
-Barnyard2 Output Plugin:
+Build these packages from '/usr/ports', 'pkg_add -r', or 'portmaster -n'
 
-Example: mysql-client-5.5.23 Multithreaded SQL database (client) (can be added for barnyard2 sql logging)
+```shell
+[user@sensor /usr/ports/devel/libee]# sudo make clean install 
+```
+
+Barnyard2 Output Plugins:
+
+Barnyard2 output plugins such as 'mysql' require additional dependencies to be prebuilt.
+
+Example: 
+```shell
+barnyard2-1.9_2     An output system for Snort or Suricata that parses unified2
+mysql-client-5.5.23 Multithreaded SQL database (client) (can be added for barnyard2 sql logging)
+```
+
+
 
 ## Switch FreeBSD syslog to syslog-ng using FIFO
 
@@ -269,7 +283,7 @@ Run Sagan for the first time.
 -rw-r--r--  1 root   sagan   4785 May 10 18:20 sagan.u2.1336685484
 ```
 
-## Barnyard2
+## Barnyard2 Configuration
 
 Create barnyard2.conf files 
 
@@ -309,7 +323,9 @@ Message:  Accepted publickey for shadowbq from 1.2.5.6 port 59625 ssh2
 
 YEA! Working.. Moving ON!
 
-Set up barnyard2 to run in daemon mode, and log to snorby mysql remote database (this can be skipped if not running snorby)
+## Barnyard Production Service
+
+Set up barnyard2 to run in via rc.d
 
 Modify your '/etc/rc.conf' and barnyard rc.d startup script.
 
@@ -319,6 +335,9 @@ barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 ```
 
 ## Barnyard2 and Existing Snorby/Base/DB
+
+Set up barnyard2 to log to snorby mysql remote database (this can be skipped if not running snorby)
+
 
 ```shell
 [user@sensor ~]# sudo fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/barnyard2.sagan.conf -o /usr/local/etc/barnyard2.conf
@@ -334,7 +353,7 @@ input unified2
 output database: log, mysql, user=snorby password=s3cr3tsauce dbname=snorby host=snorby
 ```
 
-Start Barnyard2
+## Start Barnyard2
 
 ```shell
 [user@sensor ~]# sudo /usr/local/etc/rc.d/barnyard2 start
