@@ -1,0 +1,5 @@
+#Normalize Sample
+prefix=
+rule=:Explict text is required at the %location:word%
+rule=:%firstword:word% match xxxxx
+rule=:Will %secondword:word% xxxxx

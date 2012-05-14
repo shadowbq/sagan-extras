@@ -1,7 +1,21 @@
 Normalizer (0.3.4)
-(Installed by liblognorm) 
 =======================
+(Installed by liblognorm) 
 
+## Example Usage:
+
+Running *normalizer* to test your rulebase manually.
+
+```shell
+$ normalizer -r ./example.rulebase -e json < ./example.log
+{"src-port": "14121", "src-ip": "192.168.0.1", "username": "bobuser"}
+```
+
+## Usage Flags
+
+Note: The currect normalizer cli does not have a --help, or -? method
+
+```shell
 $ normalizer -r ./messages.sampdb -ejson < ./messages.log > messages-normalized.log
 
 -r = path to the rulebase
@@ -22,3 +36,4 @@ $ normalizer -r ./messages.sampdb -ejson < ./messages.log > messages-normalized.
 -T = Flat tags
 
 -t = Fields that should be mandatory, only messages with these defined fields will be outputed.
+```

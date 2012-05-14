@@ -1,0 +1,2 @@
+prefix=
+rule=:Invalid user %username:word% from %src-ip:ipv4% on port %src-port:number%

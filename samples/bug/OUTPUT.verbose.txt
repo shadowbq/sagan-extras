@@ -1,0 +1,123 @@
+$. normalizer -vv -r ./bug.rulebase -e json -p < ./bug.log
+liblognorm: read sample line: 'prefix='
+liblognorm: read sample line: 'rule=:Explict text is required at the %location:word%'
+liBlognorm: sample line to add: ':Explict text is required at the %location:word%'
+
+liblognorm: addSampToTree 0 of 47
+liblognorm: parsed literal: 'Explict text is required at the '
+liblognorm: buildPTree: begin at 0x801408600, offs 0
+liblognorm: case 3.1
+liblognorm: addPTree: offs 0
+liblognorm: setPrefix lenBuf 32, offs 0
+liblognorm: addSampToTree 32 of 47
+liblognorm: parsed field: 'location'
+liblognorm: got new subtree 0x801408f00
+liblognorm: prev subtree 0x801408600
+liblognorm: new subtree 0x801408f00
+liblognorm: end addSampToTree 47 of 47
+liblognorm: read sample line: 'rule=:%firstword:word% match xxxxx'
+liblognorm: sample line to add: ':%firstword:word% match xxxxx'
+
+liblognorm: addSampToTree 0 of 28
+liblognorm: read sample line: 'rule=:Will %secondword:word% xxxxx'
+liblognorm: sample line to add: ':Will %secondword:word% xxxxx'
+
+liblognorm: addSampToTree 0 of 28
+liblognorm: parsed literal: 'Will '
+liblognorm: buildPTree: begin at 0x801408600, offs 0
+liblognorm: case 2, i=0, ipfix=0
+liblognorm: splitTree 0x801408600 at offs 0
+liblognorm: setPrefix lenBuf 0, offs 0
+liblognorm: splitTree new tree 0x801409800 lenPrefix=0, char '
+liblognorm: splitTree new case two bb, offs=0, newlen 31
+liblognorm: pre addPTree: i 0
+liblognorm: addPTree: offs 0
+liblognorm: addPTree: add 'Will ', offs 0, tree 0x801409800
+liblognorm: setPrefix lenBuf 4, offs 0
+liblognorm: addSampToTree 5 of 28
+liblognorm: parsed field: 'secondword'
+liblognorm: got new subtree 0x80140aa00
+liblognorm: prev subtree 0x80140a100
+liblognorm: new subtree 0x80140aa00
+liblognorm: addSampToTree 22 of 28
+liblognorm: parsed literal: ' xxxxx'
+liblognorm: buildPTree: begin at 0x80140aa00, offs 0
+liblognorm: case 3.1
+liblognorm: addPTree: offs 0
+liblognorm: setPrefix lenBuf 6, offs 0
+liblognorm: end addSampToTree 28 of 28
+number of tree nodes: 5
+To normalize: 'Explict text is required at the beginning'
+liblognorm: 0: prefix compare succeeded, still valid
+liblognorm: 0 no field, trying subtree char 'E': 0x801408600
+liblognorm: 1: prefix compare 'x', 'x'
+liblognorm: 2: prefix compare 'p', 'p'
+liblognorm: 3: prefix compare 'l', 'l'
+liblognorm: 4: prefix compare 'i', 'i'
+liblognorm: 5: prefix compare 'c', 'c'
+liblognorm: 6: prefix compare 't', 't'
+liblognorm: 7: prefix compare ' ', ' '
+liblognorm: 8: prefix compare 't', 't'
+liblognorm: 9: prefix compare 'e', 'e'
+liblognorm: 10: prefix compare 'x', 'x'
+liblognorm: 11: prefix compare 't', 't'
+liblognorm: 12: prefix compare ' ', ' '
+liblognorm: 13: prefix compare 'i', 'i'
+liblognorm: 14: prefix compare 's', 's'
+liblognorm: 15: prefix compare ' ', ' '
+liblognorm: 16: prefix compare 'r', 'r'
+liblognorm: 17: prefix compare 'e', 'e'
+liblognorm: 18: prefix compare 'q', 'q'
+liblognorm: 19: prefix compare 'u', 'u'
+liblognorm: 20: prefix compare 'i', 'i'
+liblognorm: 21: prefix compare 'r', 'r'
+liblognorm: 22: prefix compare 'e', 'e'
+liblognorm: 23: prefix compare 'd', 'd'
+liblognorm: 24: prefix compare ' ', ' '
+liblognorm: 25: prefix compare 'a', 'a'
+liblognorm: 26: prefix compare 't', 't'
+liblognorm: 27: prefix compare ' ', ' '
+liblognorm: 28: prefix compare 't', 't'
+liblognorm: 29: prefix compare 'h', 'h'
+liblognorm: 30: prefix compare 'e', 'e'
+liblognorm: 31: prefix compare ' ', ' '
+liblognorm: 32: prefix compare succeeded, still valid
+liblognorm: 32:trying parser for field 'location': 0x800a55a90
+liblognorm: potential hit, trying subtree
+liblognorm: 41 returns 0
+liblognorm: 32: parser matches at 41
+liblognorm: 32 returns 0
+liblognorm: 0 returns 0
+liblognorm: final result for normalizer: left 0, endNode 0x801408f00, isTerminal 1, tagbucket 0x0
+normalized: '{"location": "beginning"}'
+{"location": "beginning"}
+To normalize: 'Will match xxxxx'
+liblognorm: 0: prefix compare succeeded, still valid
+liblognorm: 0 no field, trying subtree char 'W': 0x80140a100
+liblognorm: 1: prefix compare 'i', 'i'
+liblognorm: 2: prefix compare 'l', 'l'
+liblognorm: 3: prefix compare 'l', 'l'
+liblognorm: 4: prefix compare ' ', ' '
+liblognorm: 5: prefix compare succeeded, still valid
+liblognorm: 5:trying parser for field 'secondword': 0x800a55a90
+liblognorm: potential hit, trying subtree
+liblognorm: 10: prefix compare ' ', ' '
+liblognorm: 11: prefix compare 'x', 'x'
+liblognorm: 12: prefix compare 'x', 'x'
+liblognorm: 13: prefix compare 'x', 'x'
+liblognorm: 14: prefix compare 'x', 'x'
+liblognorm: 15: prefix compare 'x', 'x'
+liblognorm: 16: prefix compare succeeded, still valid
+liblognorm: 16 returns 0
+liblognorm: 5: parser matches at 10
+liblognorm: 5 returns 0
+liblognorm: 0 returns 0
+liblognorm: final result for normalizer: left 0, endNode 0x80140aa00, isTerminal 1, tagbucket 0x0
+normalized: '{"secondword": "match"}'
+{"secondword": "match"}
+To normalize: 'Not match xxxxx'
+liblognorm: 0: prefix compare succeeded, still valid
+liblognorm: 0 no field, trying subtree char 'N': 0x0
+liblognorm: 0 returns 15
+liblognorm: final result for normalizer: left 15, endNode 0x7
+1 unparsable entries

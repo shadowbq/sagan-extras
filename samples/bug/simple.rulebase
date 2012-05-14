@@ -1,0 +1,3 @@
+prefix=
+rule=: %date:date-rfc3164% %host:word% %tag:char-to:\x3a%: restart.
+rule=:%date:date-rfc3164% %host:word% %tag:char-to:\x3a%: restart.
