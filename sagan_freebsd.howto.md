@@ -1,13 +1,15 @@
 Building & Installing SAGAN For FreeBSD
 ===============================
 
-Goal => *Configure Sagan with liblognorm to log to unified2 snort logging format, using barnyard2 for output plugins* 
+Goal => **Configure Sagan with liblognorm to log to unified2 snort logging format, using barnyard2 for output plugins** 
 
 This goal outlines the best practices to decouple the processor and allow for the fastest logging, and alerting chain possible. 
 
 ## Install these Dependecies from Ports Tree:
 
-Build These: 
+*Note: Althought the versions are listed here explicit, you may want/need to build the latest from the port tree.*
+
+Ports: 
 ```shell
 pcre-8.30_2         Perl Compatible Regular Expressions library
 perl-5.12.4_4       Practical Extraction and Report Language
