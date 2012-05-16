@@ -326,7 +326,9 @@ input unified2
 output alert_fast: stdout
 ```
 
-Run Barnyard2 to collect the unified2 data and output to double check alert chain is working.
+### Run Barnyard2 
+
+Collect the unified2 data and output to double check alert chain is working.
 
 ```shell
 [user@sensor ~]# sudo mkdir /var/log/barnyard2  # Barnyard complains when this directory doesnt exist, although it is not used.
@@ -348,9 +350,11 @@ Message:  Accepted publickey for shadowbq from 1.2.5.6 port 59625 ssh2
 [Xref => http://wiki.quadrantsec.com/bin/view/Main/5000406]
 ```
 
-### YEA! Working.. Moving ON!
+### YEA! 
 
-## Barnyard Production Service
+Working.. Moving ON!
+
+### Barnyard Production Service
 
 Set up barnyard2 to run in via rc.d
 
@@ -361,7 +365,7 @@ barnyard2_enable="YES"
 barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 ```
 
-## Optional. Barnyard2 and Existing Snorby/Base/DB
+### Optional. Barnyard2 and Existing Snorby/Base/DB
 
 Set up barnyard2 to log to snorby mysql remote database (this can be skipped if not running snorby)
 
