@@ -88,30 +88,49 @@ Installing the rest From Source:
 
 ## Liblognorm
 
-View GIT REPO Status for liblognorm
-http://git.adiscon.com/?p=liblognorm.git;a=summary
+### Fetch Nightly
 
-fetch a tag/snapshot 
-liblognorm.0.3.4.tar.gz
-http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz
+GIT REPO for liblognorm
+http://git.adiscon.com/?p=liblognorm.git;a=summary
 
 ```shell
 [user@sensor ~/]# wget -O liblognorm.0.3.4.tar.gz "http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz"
 
-- or -
+- or - 
 
-[user@sensor ~/]# fetch http://www.liblognorm.com/files/download/liblognorm-0.3.4.tar.gz
+[user@sensor ~/]# git clone git:///git.adiscon.com/git/liblognorm.git
 ```
-Decompress and compile liblognorm
+
+Nightly requires auto tooling build your ./configure
 
 ```shell
+[user@sensor ~/]# cd liblognorm*
+[user@sensor ~/liblognorm]# aclocal
+[user@sensor ~/liblognorm]# autoconf
+[user@sensor ~/liblognorm]# autoreconf -f -i -Wall,no-obsolete
+
+```
+
+### Fetch a tag/snapshot
+
+liblognorm.0.3.4.tar.gz
+http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz
+
+```shell 
+
+[user@sensor ~/]# fetch http://www.liblognorm.com/files/download/liblognorm-0.3.4.tar.gz
 [user@sensor ~/]# tar -zxvf liblognorm-*
+```
+
+Compile liblognorm
+
+```shell
 
 [user@sensor ~/]# cd liblognorm*
 
-[user@sensor ~/]# LDFLAGS=-L/usr/local/lib CFLAGS=-I/usr/local/include ./configure
-[user@sensor ~/]# make 
-[user@sensor ~/]# sudo make install
+[user@sensor ~/liblognorm]# LDFLAGS=-L/usr/local/lib CFLAGS=-I/usr/local/include ./configure
+[user@sensor ~/liblognorm]# make 
+[user@sensor ~/liblognorm]# sudo make install
 ```
 
 You should see
