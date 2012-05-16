@@ -43,7 +43,6 @@ mysql-client-5.5.23 Multithreaded SQL database (client) (can be added for barnya
 Modify your '/etc/rc.conf' 
 
 ```shell 
-
 syslog_ng_enable="YES"
 syslogd_enable="NO"
 syslog_ng_config="-u root"
@@ -88,20 +87,18 @@ Installing the rest From Source:
 
 ## Liblognorm
 
-### Fetch Nightly
+### Option 1. Fetch Nightly
 
 GIT REPO for liblognorm
 http://git.adiscon.com/?p=liblognorm.git;a=summary
 
 ```shell
 [user@sensor ~/]# wget -O liblognorm.0.3.4.tar.gz "http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz"
-
 - or - 
-
 [user@sensor ~/]# git clone git:///git.adiscon.com/git/liblognorm.git
 ```
 
-Nightly requires auto tooling build your ./configure
+Nightly requires auto tooling to build your ./configure file
 
 ```shell
 [user@sensor ~/]# cd liblognorm*
@@ -111,7 +108,7 @@ Nightly requires auto tooling build your ./configure
 
 ```
 
-### Fetch a tag/snapshot
+### Option 2. Fetch a tag/snapshot
 
 liblognorm.0.3.4.tar.gz
 http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz
@@ -122,10 +119,9 @@ http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632a
 [user@sensor ~/]# tar -zxvf liblognorm-*
 ```
 
-Compile liblognorm
+### Continue to Compile liblognorm
 
 ```shell
-
 [user@sensor ~/]# cd liblognorm*
 
 [user@sensor ~/liblognorm]# LDFLAGS=-L/usr/local/lib CFLAGS=-I/usr/local/include ./configure
