@@ -348,7 +348,7 @@ Message:  Accepted publickey for shadowbq from 1.2.5.6 port 59625 ssh2
 [Xref => http://wiki.quadrantsec.com/bin/view/Main/5000406]
 ```
 
-YEA! Working.. Moving ON!
+### YEA! Working.. Moving ON!
 
 ## Barnyard Production Service
 
@@ -361,7 +361,7 @@ barnyard2_enable="YES"
 barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 ```
 
-## Barnyard2 and Existing Snorby/Base/DB
+## Optional. Barnyard2 and Existing Snorby/Base/DB
 
 Set up barnyard2 to log to snorby mysql remote database (this can be skipped if not running snorby)
 
