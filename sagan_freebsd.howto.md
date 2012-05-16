@@ -5,7 +5,7 @@ Goal => **Configure Sagan with liblognorm to log to unified2 snort logging forma
 
 This goal outlines the best practices to decouple the processor and allow for the fastest logging, and alerting chain possible. 
 
-## Install these Dependecies from Ports Tree:
+## Install these Dependencies from Ports Tree:
 
 *Note: Althought the versions are listed here explicit, you may want/need to build the latest from the port tree.*
 
