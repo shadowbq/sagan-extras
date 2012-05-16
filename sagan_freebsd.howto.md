@@ -95,7 +95,7 @@ http://git.adiscon.com/?p=liblognorm.git;a=summary
 ```shell
 [user@sensor ~/]# wget -O liblognorm.0.3.4.tar.gz "http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz"
 - or - 
-[user@sensor ~/]# git clone git:///git.adiscon.com/git/liblognorm.git
+[user@sensor ~/]# git clone git://git.adiscon.com/git/liblognorm.git
 ```
 
 Nightly requires auto tooling to build your ./configure file
@@ -105,16 +105,15 @@ Nightly requires auto tooling to build your ./configure file
 [user@sensor ~/liblognorm]# aclocal
 [user@sensor ~/liblognorm]# autoconf
 [user@sensor ~/liblognorm]# autoreconf -f -i -Wall,no-obsolete
-
 ```
 
 ### Option 2. Fetch a tag/snapshot
 
-liblognorm.0.3.4.tar.gz
+Tags should be ready release with configure files *liblognorm.0.3.4.tar.gz*
+
 http://git.adiscon.com/?p=liblognorm.git;a=snapshot;h=f4b985047cd23be087aa93632acdd7ef7ea8ec70;sf=tgz
 
 ```shell 
-
 [user@sensor ~/]# fetch http://www.liblognorm.com/files/download/liblognorm-0.3.4.tar.gz
 [user@sensor ~/]# tar -zxvf liblognorm-*
 ```
@@ -134,6 +133,17 @@ You should see
 ----------------------------------------------------------------------
 Libraries have been installed in:
    /usr/local/lib
+```
+
+### Normalizer
+
+The normalizer binary has been installed with liblognorm, and can assist you in testing your *.rulebase files.
+
+https://github.com/shadowbq/sagan-extras/blob/master/samples/README.normalizer.md
+
+```shell
+$ normalizer -r ./example.rulebase -e json < ./example.log
+{"src-port": "14121", "src-ip": "192.168.0.1", "username": "bobuser"}
 ```
 
 ## Sagan
