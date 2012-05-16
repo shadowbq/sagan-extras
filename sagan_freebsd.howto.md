@@ -1,9 +1,11 @@
 Building & Installing SAGAN For FreeBSD
 ===============================
 
-Configure Sagan to log to unified2 snort logging format. This is best way to decouple the processor and allow for the fastest logging. Use barnyard2 for output plugins.
+Goal => *Configure Sagan with liblognorm to log to unified2 snort logging format, using barnyard2 for output plugins* 
 
-## Install from Ports Tree:
+This goal outlines the best practices to decouple the processor and allow for the fastest logging, and alerting chain possible. 
+
+## Install these Dependecies from Ports Tree:
 
 Build These: 
 ```shell
@@ -20,13 +22,13 @@ syslog-ng-3.3.5     A powerful syslogd replacement
 
 Example: 
 
-Build these packages from '/usr/ports', 'pkg_add -r', or 'portmaster -n'
+Build these freebsd packages from '/usr/ports', 'pkg_add -r', or 'portmaster -n'
 
 ```shell
 [user@sensor /usr/ports/devel/libee]# sudo make clean install 
 ```
 
-Barnyard2 Output Plugins:
+### Barnyard2 Output Plugins:
 
 Barnyard2 output plugins such as 'mysql' require additional dependencies to be prebuilt.
 
@@ -35,8 +37,6 @@ Example:
 barnyard2-1.9_2     An output system for Snort or Suricata that parses unified2
 mysql-client-5.5.23 Multithreaded SQL database (client) (can be added for barnyard2 sql logging)
 ```
-
-
 
 ## Switch FreeBSD syslog to syslog-ng using FIFO
 
