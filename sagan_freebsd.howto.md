@@ -310,7 +310,9 @@ Run Sagan for the first time.
 -rw-r--r--  1 root   sagan   4785 May 10 18:20 sagan.u2.1336685484
 ```
 
-## Barnyard2 Configuration
+## Barnyard2 
+
+### Configuration
 
 Create barnyard2.conf files 
 
@@ -367,8 +369,8 @@ barnyard2_flags="-D -f sagan.u2 -d /var/log/sagan"
 
 ### Optional. Barnyard2 and Existing Snorby/Base/DB
 
-Set up barnyard2 to log to snorby mysql remote database (this can be skipped if not running snorby)
-
+Set up barnyard2 to log to snorby mysql remote database 
+(this can be skipped if not running snorby, or remote db)
 
 ```shell
 [user@sensor ~]# sudo fetch https://raw.github.com/shadowbq/sagan-extras/master/etc/barnyard2.sagan.conf -o /usr/local/etc/barnyard2.conf
@@ -384,7 +386,7 @@ input unified2
 output database: log, mysql, user=snorby password=s3cr3tsauce dbname=snorby host=snorby
 ```
 
-## Start Barnyard2
+### Start Barnyard2
 
 ```shell
 [user@sensor ~]# sudo /usr/local/etc/rc.d/barnyard2 start
