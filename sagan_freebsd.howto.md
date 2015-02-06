@@ -1,4 +1,4 @@
-Building & Installing SAGAN For FreeBSD
+Building & Installing SAGAN For FreeBSD 8 & liblognorm < 0.3.9
 ===============================
 
 Goal => **Configure Sagan with liblognorm to log to unified2 snort logging format, using barnyard2 for output plugins** 
