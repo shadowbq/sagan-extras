@@ -1,0 +1,6 @@
+## PassiveDNS (github/shadowbq)
+## PassiveDNS Output passivedns_fields="SMcsCQTAtn"
+## Timestamp(s).Timestamp(ms) || Client IP||Server IP||Class||Query||Type||Answer||TTL||Count
+## 1436208996.525177||192.168.1.7||192.168.1.1||IN||www-google-analytics.l.google.com.||A||74.125.113.102||137||17
+prefix=
+rule=:%seen-time:number%.%seen-mtime:number%||%src-ip:ipv4%||%dst-ip:ipv4%||%clas:char-to:|%||%query:char-to:|%||%rtype:char-to:|%||%answer:char-to:|%||%ttl:number%||%observed-count:number%
