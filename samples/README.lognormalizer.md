@@ -31,3 +31,7 @@ Options:
     -d           Print DOT file to stdout and exit
     -d<filename> Save DOT file to the filename
 ```
+
+## Observed Difference between `sagan` and `lognormalizer`
+
+WARNING: When running lognormalizer the space between "rule=: %" and "rule=:%" is parsed!! so change when testing..
