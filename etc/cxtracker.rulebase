@@ -1,0 +1,7 @@
+## Cxtracker (github/shadowbq)
+## Logstash Output
+## %cxd %stm %etm %dur %pro %sip %spt %dip %dpt %spk %sby %dpk %dby %sfl %dfl %ver
+## 1427742248000001499 2015-01-30 11:04:08 2015-01-30 11:04:19 11 6 172.26.11.21 443 72.74.139.9 31208 7 812 0 0 27 0 2
+prefix=
+
+rule=:%-:number% %date:date-iso% %time:time-24hr% %-:date-iso% %-:time-24hr% %-:number% %proto:number% %src-ip:ipv4% %src-port:number% %dst-ip:ipv4% %dst-port:number% %-:rest%
